@@ -1,0 +1,55 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider {
+    padding: 1.25rem 0;
+    overflow: hidden;
+    display: flex;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.logos {
+    display: flex;
+    gap: 3.75rem;
+    padding-right: 3.75rem;
+    will-change: transform;
+    animation: scrolling 30s linear infinite;
+}
+
+.logo {
+    flex: 0 0 9.375rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 100%;
+    height: 66%;
+}
+
+.slider:hover .logos {
+    animation-play-state: paused;
+}
+
+
+@keyframes scrolling {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
